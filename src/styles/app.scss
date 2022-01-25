@@ -9,6 +9,33 @@ body {
   color: #29292e;
 }
 
+html, body, #root {
+  height: 100%;
+}
+
 body, input, button, textarea {
   font: 400 16px 'Roboto', sans-serif;
+}
+
+input, 
+textarea {
+  border-radius: 8px;
+  background: #FFF;
+  border: 1px solid #a8a8b3;
+  outline: none;
+}
+
+input:focus, 
+textarea:focus {
+  border: 1px solid var(--color-primary);
+}
+
+:root {
+  --color-primary: #835afd;
+  --color-secondary: #e559f9;
+  --color-neutral-100: #f8f8f8;
+  --color-neutral-200: #e2e2e2;
+  --color-neutral-400: #a8a8b3;
+  --color-neutral-600: #737380;
+  --color-neutral-900: #29292e;
 }

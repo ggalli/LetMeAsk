@@ -64,10 +64,7 @@
     form {
       input {
         height: 50px;
-        border-radius: 8px;
         padding: 0 16px;
-        background: #FFF;
-        border: 1px solid #a8a8b3;
       }
 
       button { 
@@ -95,8 +92,7 @@
     height: 50px;
     border-radius: 8px;
     font-weight: 500;
-    background: #ea4335;
-    color: #FFF;
+    background: #fff;
     text-decoration: none;
 
     display: flex;
@@ -104,7 +100,7 @@
     align-items: center;
 
     cursor: pointer;
-    border: 0;
+    border: 1px solid #A8A8B3;
 
     transition: filter 0.2s;
 
