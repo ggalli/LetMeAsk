@@ -1,8 +1,10 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import { ref, getDatabase, remove, update } from "firebase/database";
+import { ref, getDatabase, remove, update, set } from "firebase/database";
 
 import logoImg from '../assets/images/logo.svg';
 import deleteImg from '../assets/images/delete.svg';
+import checkImg from '../assets/images/check.svg';
+import answerImg from '../assets/images/answer.svg';
 
 import { Button } from '../components/Button';
 import { Question } from '../components/Question';
@@ -42,6 +44,22 @@ export function AdminRoom() {
     }
   }
 
+  async function checkQuestion(questionId: string) {
+    let questionRef = ref(getDatabase(), `rooms/${roomId}/questions/${questionId}`);
+
+    await update(questionRef, {
+      isAnswered: true
+    })
+  }
+
+  async function highlightQuestion(questionId: string) {
+    let questionRef = ref(getDatabase(), `rooms/${roomId}/questions/${questionId}`);
+
+    await update(questionRef, {
+      isHighlighted: true
+    })
+  }
+
   return (
     <div id="page-room">
       <header>
@@ -67,7 +85,25 @@ export function AdminRoom() {
                 key={question.id}
                 content={question.content}
                 author={question.author}
+                isAnswered={question.isAnswered}
+                isHighlighted={question.isHighlighted}
               >
+                {!question.isAnswered && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => checkQuestion(question.id)}
+                    >
+                      <img src={checkImg} alt="Marcar pergunta como respondida" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => highlightQuestion(question.id)}
+                    >
+                      <img src={answerImg} alt="Dar destaque à pergunta" />
+                    </button>
+                  </>
+                )}
                 <button
                   type="button"
                   onClick={() => deleteQuestion(question.id)}
