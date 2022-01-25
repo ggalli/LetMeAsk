@@ -30,13 +30,16 @@ export function Home() {
 
     if (roomCode == '') return;
 
-    const roomRef = ref(getDatabase());
+    const roomRef = ref(getDatabase(), `rooms/${roomCode}`);
 
-    const result = await get(child(roomRef, `rooms/${roomCode}`));
+    const result = await get(roomRef);
     
     if (!result.exists()) {
-      alert('Room does not exist.');
-      return;
+      return alert('Room does not exist.');
+    }
+
+    if (result.val().endedAt) {
+      return alert('Room already closed.');
     }
 
     navigate(`rooms/${roomCode}`)
