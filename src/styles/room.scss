@@ -32,6 +32,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    padding: 24px;
 
     .room-title {
       display: flex;
@@ -39,7 +40,7 @@
       margin-bottom: 32px;
 
       h1 {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: 24px;
         color: #29292e;
       }
@@ -49,7 +50,7 @@
         background: #e559f9;
         border-radius: 9999px;
         padding: 8px 16px;
-        color: #FFF;
+        color: #fff;
         font-weight: 500;
         font-size: 14px;
       }
@@ -96,7 +97,7 @@
           button {
             background: transparent;
             border: 0;
-            color: #835AFD;
+            color: #835afd;
             text-decoration: underline;
             font-size: 14px;
             font-weight: 500;
@@ -112,6 +113,31 @@
 
     .empty {
       text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #page-room {
+    .content {
+      flex-direction: column;
+
+      > div {
+        flex-direction: column;
+
+        button {
+          height: 30px;
+        }
+      }
+    }
+
+    .room-code {
+      height: 30px;
+      margin-top: 24px;
+
+      span {
+        font-size: 12px;
+      }
     }
   }
 }

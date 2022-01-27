@@ -77,7 +77,7 @@ export function Room() {
 
       <main>
         <div className="room-title">
-          <h1>Sala {title}</h1>
+          <h1>Sala: {title}</h1>
           <span>{questions.length} {questions.length === 1 ? 'pergunta' : 'perguntas'}</span>
         </div>
 

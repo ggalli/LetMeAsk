@@ -5,7 +5,7 @@
   padding: 24px;
 
   & + .question {
-    margin-top: 8px;
+    margin-top: 16px;
   }
 
   &.highlighted {
@@ -50,7 +50,10 @@
 
     > div {
       display: flex;
-      gap: 16px;
+    }
+
+    .action-buttons {
+      gap: 8px;
     }
 
     button {
@@ -63,7 +66,7 @@
         display: flex;
         align-items: flex-end;
         color: #737380;
-        gap: 8px;
+        gap: 6px;
 
         &.liked {
           color: #835afd;
@@ -78,5 +81,11 @@
         filter: brightness(0.7);
       }
     }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .question {
+    padding: 16px;
   }
 }

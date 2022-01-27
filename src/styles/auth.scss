@@ -138,3 +138,11 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  #page-auth {
+    aside {
+      display: none;
+    }
+  }
+}
