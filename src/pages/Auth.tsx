@@ -66,7 +66,7 @@ export function Home() {
               placeholder="Digite o código da sala" 
               onChange={event => setRoom(event.target.value)}
             />
-            <Button type="submit">
+            <Button raised primary type="submit">
               Entrar na sala
             </Button>
           </form>

@@ -52,7 +52,7 @@ export function NewRoom() {
               onChange={event => setRoomName(event.target.value)}
               value={roomName}
             />
-            <Button type="submit">
+            <Button raised primary type="submit">
               Criar sala
             </Button>
             <p>Quer entrar em uma sala já existente? <a href="#">Clique aqui</a></p>
