@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
-import { getDatabase, ref, get, child } from 'firebase/database';
+import { getDatabase, ref, get } from 'firebase/database';
 
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
@@ -28,7 +28,7 @@ export function Home() {
 
     const roomCode = room.trim();
 
-    if (roomCode == '') return;
+    if (roomCode === '') return;
 
     const roomRef = ref(getDatabase(), `rooms/${roomCode}`);
 

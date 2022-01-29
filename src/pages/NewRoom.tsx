@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useAuth } from '../hooks/useAuth';
-import { getDatabase, ref, set, push } from "firebase/database";
+import { getDatabase, ref, push } from "firebase/database";
 
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
@@ -22,7 +22,7 @@ export function NewRoom() {
     
     const roomTitle = roomName.trim();
 
-    if (roomTitle == '') return;
+    if (roomTitle === '') return;
 
     const roomRef = ref(getDatabase(), 'rooms');
 
